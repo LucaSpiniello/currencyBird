@@ -16,6 +16,7 @@ currency_bird/
     ├── index.html
     ├── styles.css
     └── script.js
+```
 
 ## Instalación y Configuración
 
