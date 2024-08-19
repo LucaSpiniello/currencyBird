@@ -76,7 +76,7 @@ async def convert_to_chile_without_fee(request: ConversionRequest):
     return {
         "from_currency": request.currency.upper(),
         "to_currency": "CLP",
-        "conversion_rate": round((1/conversion_rate) * 1/0.95,6),
+        "conversion_rate": round((1/conversion_rate) * 0.95,6),
         "final_amount": round(final_amount,6)
     }
 
@@ -99,7 +99,7 @@ async def convert_from_chile_with_fee(request: ConversionRequest):
     return {
         "from_currency": request.currency.upper(),
         "to_currency": "CLP",
-        "conversion_rate": round(conversion_rate,6),
+        "conversion_rate": round(conversion_rate * 0.95,6),
         "final_amount": round(final_amount,6)
     }
     
@@ -125,6 +125,6 @@ async def convert_from_chile_without_fee(request: ConversionRequest):
     return {
         "from_currency": request.currency.upper(),
         "to_currency": "CLP",
-        "conversion_rate": round((1/conversion_rate )* 1/0.95,6),
+        "conversion_rate": round(((1/conversion_rate)*0.95),6),
         "final_amount": round(final_amount,6)
     }
