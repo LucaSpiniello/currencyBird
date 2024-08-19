@@ -6,6 +6,7 @@ Este proyecto es un cotizador de divisas que permite convertir montos entre dife
 
 ## Estructura del Proyecto
 
+```plaintext
 currency_bird/
 ├── backend/
 │   ├── main.py
@@ -38,6 +39,7 @@ currency_bird/
     pip install -r requirements.txt
 
 3. Inicia servidor FastApi:
+    ```bash
     uvicorn main:app --reload
 
 4. Abre el archivo .html dentro de la carpeta frontend
@@ -65,7 +67,7 @@ currency_bird/
 #### El archivo index.html estructura la interfaz del usuario. Contiene elementos como un interruptor para seleccionar la dirección de conversión y campos de entrada para ingresar montos de divisas. Además, se implementa un efecto skeleton para indicar que los datos se están cargando.
 
 ### CSS
-#### El archivo styles.css define el estilo visual del cotizador. Se utilizan colores oscuros para darle un aspecto tecnológico y profesional. Los elementos interactivos como el switch y los inputs tienen un diseño moderno y minimalista.
+#### El archivo styles.css define el estilo visual del cotizador. Se utilizan colores azules para darle un aspecto tecnológico y de seguridad. Los elementos interactivos como el switch y los inputs tienen un diseño moderno y minimalista.
 
 ### JavaScript
 #### El archivo script.js maneja la lógica de la interfaz, incluyendo:
@@ -75,7 +77,7 @@ currency_bird/
 3. Skeleton Loading: Implementa una animación de carga mientras se obtiene la información de la API.
 
 ## Testing
-### El archivo main_test.py contiene pruebas unitarias para los endpoints de la API utilizando pytest. Las pruebas cubren los casos básicos para asegurarse de que los cálculos de conversión sean correctos y que los endpoints respondan adecuadamente.
+#### El archivo main_test.py contiene pruebas unitarias para los endpoints de la API utilizando pytest. Las pruebas cubren los casos básicos para asegurarse de que los cálculos de conversión sean correctos y que los endpoints respondan adecuadamente.
 
 #### Para Ejecutar las Pruebas
     ```bash
