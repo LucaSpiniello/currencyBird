@@ -81,5 +81,11 @@ currency_bird/
 #### El archivo main_test.py contiene pruebas unitarias para los endpoints de la API utilizando pytest. Las pruebas cubren los casos básicos para asegurarse de que los cálculos de conversión sean correctos y que los endpoints respondan adecuadamente.
 
 #### Para Ejecutar las Pruebas
-    ```bash
+    
     pytest main_test.py
+
+
+## Integraciones 
+#### Se utilizó la API de restcountries para obtener el nombre de los pasies y bandera a partir del isoCode. La url de esta es 
+    https://restcountries.com/v3.1/alpha/${isoCode}
+
