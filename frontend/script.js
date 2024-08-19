@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-
     function resetFormValues() {
         initialAmountForeignCurrency.value = '';
         amountReceivedChile.value = '';
