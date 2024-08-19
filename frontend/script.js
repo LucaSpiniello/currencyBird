@@ -21,38 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
     let incomingCountries = [];
     let sendCountries = []; 
 
-    // Show the skeleton loading
     showLoadingSkeleton();
 
-    // Fetch country details and initialize the selects
     initializeCountryData();
 
     conversionToggle.addEventListener('change', () => {
-        resetFormValues();  // Restablece los valores de los formularios al cambiar el switch
-        toggleConversionMode();  // Cambia entre "Desde Chile" y "Hacia Chile"
+        resetFormValues();  
+        toggleConversionMode();  
     });
 
     initialAmountForeignCurrency.addEventListener('input', () => {
         if (currencySelectedToChile && initialAmountForeignCurrency.value) {
-            handleConversion(true, "toChile");  // true porque estamos multiplicando por 0.95
+            handleConversion(true, "toChile");  
         }
     });
 
     amountCLP.addEventListener('input', () => {
         if (currencySelectedFromChile && amountCLP.value) {
-            handleConversion(true, "fromChile");  // true porque estamos multiplicando por 0.95
+            handleConversion(true, "fromChile");  
         }
     });
 
     amountReceivedChile.addEventListener('input', () => {
         if (currencySelectedToChile && amountReceivedChile.value) {
-            handleConversion(false, "fromChile");  // false porque estamos dividiendo por 0.95
+            handleConversion(false, "fromChile");  
         }
     });
 
     receivedForeignAmount.addEventListener('input', () => {
         if (currencySelectedFromChile && receivedForeignAmount.value) {
-            handleConversion(false, "toChile");  // false porque estamos dividiendo por 0.95
+            handleConversion(false, "toChile");  
         }
     });
 
@@ -103,13 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     function resetFormValues() {
-        // Restablecer inputs
         initialAmountForeignCurrency.value = '';
         amountReceivedChile.value = '';
         amountCLP.value = '';
         receivedForeignAmount.value = '';
 
-        // Restablecer selects
         currencySelectedToChile = null;
         currencySelectedFromChile = null;
         const customSelectContainers = document.querySelectorAll('.custom-select-container');
@@ -120,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Limpiar los valores de los tipos de cambio
         exchangeRateFromChile.textContent = '';
         exchangeRateToChile.textContent = '';
     }
@@ -253,14 +248,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Incluir manualmente la Unión Europea (EU)
         promises.push(Promise.resolve({
             currency: 'EUR',
             countryName: 'European Union',
             flagUrl: 'https://flagcdn.com/w320/eu.png'
         }));
 
-        // Filtrar los resultados para excluir los valores nulos
         return Promise.all(promises).then(results => results.filter(item => item !== null));
     }
 
@@ -284,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data && data[0]) {
                     return {
                         name: data[0].name.common,
-                        flag: data[0].flags.png // Usamos la versión PNG de la bandera
+                        flag: data[0].flags.png 
                     };
                 } else {
                     return { name: isoCode, flag: '' };

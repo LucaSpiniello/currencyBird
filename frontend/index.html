@@ -30,26 +30,38 @@
 
                 <div id="toChile" class="conversion-form active">
                     <label for="initialAmountForeignCurrency">Monto en moneda extranjera:</label>
-                    <input type="number" id="initialAmountForeignCurrency" placeholder="Ingresa el monto">
+                    <div class="input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="initialAmountForeignCurrency" placeholder="Ingresa el monto">
+                    </div>
 
                     <label for="forgeinCurrency">Selecciona la moneda extranjera:</label>
                     <div id="select-container-to-chile"></div> 
 
                     <label for="amountReceivedChile">Monto recibido en CLP:</label>
-                    <input type="number" id="amountReceivedChile" placeholder="Monto a recibir en CLP">
+                    <div class="input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="amountReceivedChile" placeholder="Monto a recibir en CLP">
+                    </div>
 
                     <p id="exchangeRateToChile"></p>
                 </div>
 
                 <div id="fromChile" class="conversion-form hidden">
                     <label for="amountCLP">Monto en CLP:</label>
-                    <input type="number" id="amountCLP" placeholder="Ingresa el monto en CLP">
+                    <div class="input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="amountCLP" placeholder="Ingresa el monto en CLP">
+                    </div>
 
                     <label for="sendForgeinCurrency">Selecciona la moneda de destino:</label>
                     <div id="select-container-from-chile"></div> 
 
                     <label for="receivedForeignAmount">Monto recibido en moneda extranjera:</label>
-                    <input type="number" id="receivedForeignAmount" placeholder="Monto a recibir">
+                    <div class="input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="receivedForeignAmount" placeholder="Monto a recibir">
+                    </div>
 
                     <p id="exchangeRateFromChile"></p>
                 </div>
